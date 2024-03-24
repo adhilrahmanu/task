@@ -164,35 +164,68 @@
 
 
 
-// Higher Order Function
+// // Higher Order Function
 
-const radius=[2,4,6];
+// const radius=[2,4,6];
 
-// logic to calculate area
-const area = function(radius){
-    return Math.PI * radius * radius;
-}
+// // logic to calculate area
+// const area = function(radius){
+//     return Math.PI * radius * radius;
+// }
 
-// logic to calculate diameter
-const diameter = function(radius){
-    return 2 * radius;
-}
+// // logic to calculate diameter
+// const diameter = function(radius){
+//     return 2 * radius;
+// }
 
-// logic to calculate circumference
-const circum = function(radius){
-    return 2 * Math.PI * radius;
-}
+// // logic to calculate circumference
+// const circum = function(radius){
+//     return 2 * Math.PI * radius;
+// }
 
-const calculate = function(radius, logic){ 
-    const output = [];
-    for(let i = 0; i < radius.length; i++){
-        output.push(logic(radius[i]))
-    }
-    return output;
-}
-console.log(calculate(radius, area));
-console.log(calculate(radius, diameter));
-console.log(calculate(radius, circum));
+// const calculate = function(radius, logic){ 
+//     const output = [];
+//     for(let i = 0; i < radius.length; i++){
+//         output.push(logic(radius[i]))
+//     }
+//     return output;
+// }
+// console.log(calculate(radius, area));
+// console.log(calculate(radius, diameter));
+// console.log(calculate(radius, circum));
 
 
 
+let products=[
+    {pid:100,pName:'apple',band:'5g',price:120000,display:'led'},
+    {pid:101,pName:'samsaung',band:'5g',price:45000,display:'led'},
+    {pid:102,pName:'blackberry',band:'4g',price:50000,display:'led'},
+    {pid:103,pName:'nokia',band:'3g',price:1200,display:'lcd'},
+    {pid:104,pName:'motorola',band:'4g',price:10000,display:'lcd'}
+]
+
+// 1. print product name only
+
+let product= products.map(product=>product.pName);
+console.log(product);
+
+// //2. print all mobile details whose display is lcd
+
+// let product1= products.filter(product1=>product1.display==='lcd');
+// console.log(product1);
+
+// //3. print 5g mobile phone name
+
+// let product2= products.map(product2=>product2.band==='5g');
+// console.log(product2);
+
+
+
+
+// let minPrice = 500;
+// let maxPrice = 130000;
+
+// // Filter products based on the price range
+// let filteredProducts = products.map(product => product.price >= minPrice && product.price <= maxPrice);
+
+// console.log(filteredProducts);
