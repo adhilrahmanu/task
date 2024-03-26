@@ -196,18 +196,19 @@
 
 
 
-let products=[
-    {pid:100,pName:'apple',band:'5g',price:120000,display:'led'},
-    {pid:101,pName:'samsaung',band:'5g',price:45000,display:'led'},
-    {pid:102,pName:'blackberry',band:'4g',price:50000,display:'led'},
-    {pid:103,pName:'nokia',band:'3g',price:1200,display:'lcd'},
-    {pid:104,pName:'motorola',band:'4g',price:10000,display:'lcd'}
-]
+// let products=[
+//     {pid:100,pName:'apple',band:'5g',price:120000,display:'led'},
+//     {pid:101,pName:'samsaung',band:'5g',price:45000,display:'led'},
+//     {pid:102,pName:'blackberry',band:'4g',price:50000,display:'led'},
+//     {pid:103,pName:'nokia',band:'3g',price:1200,display:'lcd'},
+//     {pid:104,pName:'motorola',band:'4g',price:10000,display:'lcd'}
+// ]
 
-// 1. print product name only
 
-let product= products.map(product=>product.pName);
-console.log(product);
+// // 1. print product name only
+
+// let product= products.map(product=>product.pName);
+// console.log(product);
 
 // //2. print all mobile details whose display is lcd
 
@@ -216,16 +217,61 @@ console.log(product);
 
 // //3. print 5g mobile phone name
 
-// let product2= products.map(product2=>product2.band==='5g');
-// console.log(product2);
+// let product2= products.filter(k=>k.band=='5g');
+// product2.forEach((k)=>console.log(k.pName));
+
+// //4. filter mobile based on price
 
 
+// let minPrice = 0;
+// let maxPrice = 1300;
+
+// let product3 = products.filter(product3=> product3.price >= minPrice && product3.price <= maxPrice);
+
+// product3.forEach((product3)=>console.log(product3.pName));
+
+// //5. costly mobile
+
+// let CostlyProduct = products.reduce((minPriceProduct, currentProduct) => {
+//     return (currentProduct.price > minPriceProduct.price) ? currentProduct : minPriceProduct;
+// }, products[0]);
+
+// console.log("Costly mobile: ", CostlyProduct.pName);
 
 
-// let minPrice = 500;
-// let maxPrice = 130000;
+// //6. low cost mobile
 
-// // Filter products based on the price range
-// let filteredProducts = products.map(product => product.price >= minPrice && product.price <= maxPrice);
+// let lowCostProduct = products.reduce((minPriceProduct, currentProduct) => {
+//     return (currentProduct.price < minPriceProduct.price) ? currentProduct : minPriceProduct;
+// }, products[0]);
 
-// console.log(filteredProducts);
+// console.log("Low cost mobile: ", lowCostProduct.pName);
+
+
+data = [
+    [1,'Ernakulam',34000,2000,23000,20000,2000],
+    [2,'Idukki',14000,3000,25000,30000,1000],
+    [3,'Thrissur',24000,4000,33000,24000,2500],
+    [4,'Pathanamthitta',20000,2000,45000,22000,1500],
+    [5,'Kozhikode',44000,5000,12000,21000,500],
+    [6,'Palakkad',12000,1000,20000,23000,3400],
+    [7,'Kottayam',27000,1500,27000,14000,1000],
+    [8,'Kollam',14000,2500,25000,18000,2700]
+]
+
+
+// //1. district having Highest +ve case
+
+// let Highest= data.reduce((min, current) => {
+//     return (current.data[2] > min.data[2]) ? current : min;
+// }, data[0]);
+
+// console.log("Highest +ve case: ", Highest.data[2]);
+
+
+let secondIndexValues = data.map(item => item[2]);
+
+// Finding the maximum value from the extracted values
+let highestValue = Math.max(...secondIndexValues);
+
+console.log("Highest value from the second index:", highestValue);
