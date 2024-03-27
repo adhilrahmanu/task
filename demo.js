@@ -260,18 +260,46 @@ data = [
 ]
 
 
-// //1. district having Highest +ve case
+//1. district having Highest +ve case
 
-// let Highest= data.reduce((min, current) => {
-//     return (current.data[2] > min.data[2]) ? current : min;
-// }, data[0]);
+let Highest= data.reduce((max, current) => {
+    return (current[2] > max[2]) ? current : max;
+});
 
-// console.log("Highest +ve case: ", Highest.data[2]);
+console.log(Highest[1]);
 
 
-let secondIndexValues = data.map(item => item[2]);
+//2. district having Highest 1st dose vaccine
 
-// Finding the maximum value from the extracted values
-let highestValue = Math.max(...secondIndexValues);
+let Highest1stdose= data.reduce((max, current) => {
+    return (current[5] > max[5]) ? current : max;
+});
 
-console.log("Highest value from the second index:", highestValue);
+console.log(Highest1stdose[1]);
+
+//3. district having lowest death rate
+
+let lowdeathrate= data.reduce((max, current) => {
+    return (current[3] < max[3]) ? current : max;
+});
+
+console.log(lowdeathrate[1]);
+
+//4. sort data with +ve case in descending order
+
+data.sort((a,b) => b[2]-a[2]);
+console.log(data);
+
+//5. district with +ve cases > 15000
+
+let greatercase = data.filter(a=>a[2]>15000);
+greatercase.forEach(p=>console.log(p[1]))
+
+//6. sort data with 1st dose vaccine
+
+data.sort((a,b) => b[5]-a[5]);
+console.log(data);
+
+// 7. Print Thrissur details
+
+console.log(data[2]);
